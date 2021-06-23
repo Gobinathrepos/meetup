@@ -1,8 +1,7 @@
 import React from 'react';
 import { Menu, Container, Button } from 'semantic-ui-react';
-import '../../App.css';
 
-const Navbar = () => {
+export default function Navbar ({setFormOpen}) {
   return (
     <Menu fixed='top' >
       <Container>
@@ -11,9 +10,9 @@ const Navbar = () => {
           Meetups
         </Menu.Item>
 {/* Events */}
-        <Menu.Item name='Events' />
+        <Menu.Item name='Events' style={{color: 'white'}}/>
           <Menu.Item>
-            <Button positive inverted content='Create Event' />
+            <Button onClick={() => setFormOpen(true)} positive inverted content='Create Event' />
           </Menu.Item>
 {/* Auth */}
           <Menu.Item position='right'>
@@ -24,5 +23,3 @@ const Navbar = () => {
     </Menu>
   )
 }
-
-export default Navbar;
