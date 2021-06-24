@@ -4,9 +4,12 @@ import App from './App';
 import './App.css';
 import 'semantic-ui-css/semantic.min.css'
 import reportWebVitals from './reportWebVitals';
+import {BrowserRouter} from 'react-router-dom';
 
 ReactDOM.render(
-    <App />,
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>,
   document.getElementById('root')
 );
 
