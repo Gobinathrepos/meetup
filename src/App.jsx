@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import EventDashboard from './feature/events/eventDashboard/EventDashboard';
 import NavBar from './feature/nav/NavBar';
 import { Container } from 'semantic-ui-react';
@@ -9,18 +9,7 @@ import EventForm from './feature/events/eventForm/EventForm';
 
 
 export default function App() {
-  const [formOpen, setFormOpen ] = useState(false)
-  const [selectedEvent, setSelectedEvent] = useState(null)
 
-  function handleSelectedEvent(event) {
-    setSelectedEvent(event)
-    setFormOpen(true)
-  }
-
-  function handleCreateFormOpen() {
-    setSelectedEvent(null)
-    setFormOpen(true)
-  }
 
   return (
     <>
@@ -29,7 +18,7 @@ export default function App() {
       <Route path={'/(.+)'}
         render={() => (
         <>
-          <NavBar setFormOpen={handleCreateFormOpen} />
+          <NavBar />
             <Container className='main'>
 
               <Route exact path='/events' component={EventDashboard} />
