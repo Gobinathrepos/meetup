@@ -6,6 +6,7 @@ import { Route } from 'react-router';
 import HomePage from './feature/home/HomePage';
 import EventDetailedPage from './feature/events/eventDetailed/EventDetailedPage';
 import EventForm from './feature/events/eventForm/EventForm';
+import Reducer from './feature/reducer/Reducer';
 
 
 export default function App() {
@@ -20,8 +21,8 @@ export default function App() {
         <>
           <NavBar />
             <Container className='main'>
-
               <Route exact path='/events' component={EventDashboard} />
+              <Route exact path='/reducer' component={Reducer} />
               <Route path='/events/:id' component={EventDetailedPage} />
               <Route path={['/createEvent', '/manage/:id']} component={EventForm} />
             </Container>

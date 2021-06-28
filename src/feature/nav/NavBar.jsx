@@ -24,11 +24,19 @@ export default function Navbar ({setFormOpen}) {
           as={NavLink} to='/events'
           style={{color: 'white'}}
         />
+        <Menu.Item name='reducer'
+          as={NavLink} to='/reducer'
+          style={{color: 'white'}}
+        />
+        {authentication && (
           <Menu.Item
             as={NavLink} to='/createEvent' >
             <Button onClick={() => setFormOpen(true)} positive inverted content='Create Event'
           />
           </Menu.Item>
+        )}
+
+
 {/* Auth */}
         {authentication ? <SignedInMenu signOut={handleSignOut} /> : <SignedOutMenu setAuthentication={setAuthentication} /> }
 
