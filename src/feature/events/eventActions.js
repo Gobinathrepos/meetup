@@ -7,7 +7,7 @@ export function createEvent(event) {
   }
 }
 
-export function upateEvent(event) {
+export function updateEvent(event) {
   return {
     type: UPDATE_EVENT,
     payload: event

@@ -7,10 +7,11 @@ import HomePage from './feature/home/HomePage';
 import EventDetailedPage from './feature/events/eventDetailed/EventDetailedPage';
 import EventForm from './feature/events/eventForm/EventForm';
 import Reducer from './feature/reducer/Reducer';
+import { useLocation } from 'react-router-dom';
 
 
 export default function App() {
-
+  const {key} = useLocation();
 
   return (
     <>
@@ -24,7 +25,7 @@ export default function App() {
               <Route exact path='/events' component={EventDashboard} />
               <Route exact path='/reducer' component={Reducer} />
               <Route path='/events/:id' component={EventDetailedPage} />
-              <Route path={['/createEvent', '/manage/:id']} component={EventForm} />
+              <Route path={['/createEvent', '/manage/:id']} component={EventForm} key={key} />
             </Container>
         </>
 

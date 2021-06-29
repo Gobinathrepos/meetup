@@ -31,12 +31,11 @@ export default function Navbar ({setFormOpen}) {
         {authentication && (
           <Menu.Item
             as={NavLink} to='/createEvent' >
-            <Button onClick={() => setFormOpen(true)} positive inverted content='Create Event'
+            <Button
+            positive inverted content='Create Event'
           />
           </Menu.Item>
         )}
-
-
 {/* Auth */}
         {authentication ? <SignedInMenu signOut={handleSignOut} /> : <SignedOutMenu setAuthentication={setAuthentication} /> }
 
