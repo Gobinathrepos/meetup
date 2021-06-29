@@ -34,3 +34,7 @@ body {
 .homepage h1.ui.inverted.header {
 	font-size: 4em;
 }
+
+.react-datepicker-wrapper {
+	width: 100%;
+}

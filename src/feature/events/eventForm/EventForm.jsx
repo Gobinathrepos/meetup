@@ -8,6 +8,10 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { createEvent, updateEvent } from '../eventActions';
 import MyTextInput from '../../../app/form/MyTextInput';
+import MyTextArea from '../../../app/form/MyTextArea';
+import MySelectInput from '../../../app/form/MySelectInput';
+import { categoryData } from '../../../app/api/categoryOption';
+import MyDatePicker from '../../../app/form/MyDatePicker';
 
 export default function EventForm({ match, history }) {
   const dispatch = useDispatch();
@@ -53,16 +57,25 @@ export default function EventForm({ match, history }) {
           <Form className='ui form'>
           <Header sub color='teal' content='Event Details' />
             <MyTextInput name='title' placeholder='Event title' />
-            <MyTextInput name='category' placeholder='Event category' />
-            <MyTextInput name='description' placeholder='Description' />
-          <Header sub color='teal' content='Event Location Details' />
+            <MySelectInput name='category' placeholder='Event category' options={categoryData} />
+            <MyTextArea name='description' placeholder='Description' />
+            
+            <Header sub color='teal' content='Event Location Details' />
             <MyTextInput name='city' placeholder='City' />
             <MyTextInput name='venue' placeholder='Venue' />
-            <MyTextInput name='date' placeholder='Event date' type='date' />
+
+            <MyDatePicker
+             name='date'
+             placeholderText='Event date'
+             timeFormat='HH:mm'
+             showTimeSelect
+             timeCaption='time'
+             dateFormat='MMMM d, yyyy h:mm a'
+             />
+
+          <Button type='submit' floated='right' positive content='Submit' />
 
           <Button
-          type='submit' floated='right' positive content='Submit' />
-           <Button
            as={Link} to='/events'
            type='submit'
            floated='right'
